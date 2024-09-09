@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>
+        Edit User
+    </h1>
+    <form action="{{url_for('edituser',id=data.ID)}}" method="POST">
+        <input type="hidden" name="id" value="{{data.ID}}">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" value="{{data.NAME}}"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="text" name="age" value="{{data.AGE}}"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city" value="{{data.CITY}}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

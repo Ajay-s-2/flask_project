@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flask_project</title>
+</head>
+<body>
+    <h1>User Managment Using Python Flask $ Mysql</h1>
+    <p><a href="{{url_for('adduser')}}"><input type="button" value="Add User"></a></p>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>CITY</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+        {%for data in datas%}
+            <tr>
+                <td>{{data.ID}} </td>
+                <td>{{data.NAME}}</td>
+                <td>{{data.AGE}}</td>
+                <td>{{data.CITY}}</td>
+                <td><a href="{{ url_for('edituser', id=data.ID) }}"><input type="button" value="Edit"></a></td>
+                <td><a href="{{ url_for('deleteuser', id=data.ID) }}"><input type="button" value="Delete"></a></td>
+               
+            </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
